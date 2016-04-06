@@ -10,4 +10,11 @@ Enter your VersionOne instance's url
 
 Enter your VersionOne API token: 
 //Example: Bearer XXXXXXXXXXX  
-> Triggers: `v1token`  
+> Triggers: `v1token`
+
+Open team room lobby:
+> Triggers: `v1 lobby`
+
+ Open team room by name:
+> Triggers: `v1 open teamroom <team room name>`
+

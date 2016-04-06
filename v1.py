@@ -2,6 +2,8 @@ import sys
 import argparse
 from workflow import Workflow, ICON_WEB, ICON_WARNING, web, PasswordNotFound
 
+log = None
+
 def make_query(url, api_key):
     params = dict(sel="Name")
     headers = dict(Authorization=api_key, Accept="application/json")
@@ -51,4 +53,5 @@ def main(wf):
 
 if __name__ == u"__main__":
     wf = Workflow()
+    log = wf.logger
     sys.exit(wf.run(main))

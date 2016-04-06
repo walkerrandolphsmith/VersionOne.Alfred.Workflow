@@ -1,6 +1,6 @@
 import sys
 import argparse
-from workflow import Workflow, ICON_WEB, ICON_WARNING, web
+from workflow import Workflow, ICON_WEB, ICON_WARNING, web, PasswordNotFound
 
 def make_query(url, api_key):
     params = dict(sel="Name")
@@ -30,11 +30,12 @@ def main(wf):
         return 0
 
     if args.apikey:
-        wf.settings['api_key'] = args.apikey
+        wf.save_password['api_key'] = args.apikey
         return 0
 
-    api_key = wf.settings.get('api_key', None)
-    if not api_key:
+    try:
+        api_key = wf.get_password('api_key')
+    except PasswordNotFound:
         wf.add_item('Set API Token', 'Please use v1token to set your API token', valid=False, icon=ICON_WARNING)
         wf.send_feedback()
         return 0

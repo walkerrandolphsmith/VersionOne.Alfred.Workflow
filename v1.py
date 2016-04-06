@@ -51,8 +51,10 @@ def main(wf):
     if query:
         if query == 'lobby':
             teamroom.open_lobby(url)
+        elif query.startswith('open teamroom'):
+            teamroom.open_team_room(url, api_key, query.split('open teamroom')[1])
         else:
-            teamroom.open_team_room(url, api_key, query)
+            print('nothing')
     else:
         assets = make_query(url, api_key)
         for asset in assets:

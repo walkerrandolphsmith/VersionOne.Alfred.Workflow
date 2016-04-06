@@ -1,19 +1,47 @@
 import sys
-from workflow import Workflow, ICON_WEB, web
+import argparse
+from workflow import Workflow, ICON_WEB, ICON_WARNING, web
 
-API_KEY = "Bearer <token>"
-
-def main(wf):
-    url = "<url>"
+def make_query(url, api_key):
     params = dict(sel="Name")
-    headers = dict(Authorization=API_KEY, Accept="application/json")
+    headers = dict(Authorization=api_key, Accept="application/json")
 
     r = web.get(url, params, headers)
     r.raise_for_status()
 
     result = r.json()
-    assets = result['Assets']
+    return result['Assets']
 
+def main(wf):
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--seturl', dest='url', nargs='?', default=None)
+    parser.add_argument('--setkey', dest='apikey', nargs='?', default=None)
+    parser.add_argument('query', nargs='?', default=None)
+    args = parser.parse_args(wf.args)
+
+    if args.url:
+        wf.settings['url'] = args.url
+        return 0
+
+    url = wf.settings.get('url', None)
+    if not url:
+        wf.add_item('Set VersionOne Url', 'Please use v1url to set your instace url', valid=False, icon=ICON_WARNING)
+        wf.send_feedback()
+        return 0
+
+    if args.apikey:
+        wf.settings['api_key'] = args.apikey
+        return 0
+
+    api_key = wf.settings.get('api_key', None)
+    if not api_key:
+        wf.add_item('Set API Token', 'Please use v1token to set your API token', valid=False, icon=ICON_WARNING)
+        wf.send_feedback()
+        return 0
+
+    query = args.query
+
+    assets = make_query(url, api_key)
     for asset in assets:
         title = asset['id']
         subtitle = asset['Attributes']['Name']['value']

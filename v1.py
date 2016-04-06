@@ -30,7 +30,7 @@ def main(wf):
         return 0
 
     if args.apikey:
-        wf.save_password['api_key'] = args.apikey
+        wf.save_password('api_key', args.apikey)
         return 0
 
     try:

@@ -1,26 +1,9 @@
 import sys
 import argparse
-import webbrowser
+from teamrooms import teamroom
 from workflow import Workflow, ICON_WEB, ICON_WARNING, web, PasswordNotFound
 
 log = None
-
-
-def open_team_room(url, api_key, name):
-    team_room_oid = get_asset_oid_from_name(url, api_key, name)
-    webbrowser.open(url + 'TeamRoom.mvc/Show/' + team_room_oid)
-
-
-def get_asset_oid_from_name(url, api_key, name):
-    params = dict(where="Name='" + name + "'")
-    headers = dict(Authorization=api_key, Accept="application/json")
-
-    print(params, headers, url)
-
-    r = web.get(url + 'rest-1.v1/Data/TeamRoom', params, headers)
-    r.raise_for_status()
-
-    return r.json()['Assets'][0]['id'].split(':')[1]
 
 
 def make_query(url, api_key):
@@ -66,7 +49,10 @@ def main(wf):
 
     query = args.query
     if query:
-        open_team_room(url, api_key, query)
+        if query == 'lobby':
+            teamroom.open_lobby(url)
+        else:
+            teamroom.open_team_room(url, api_key, query)
     else:
         assets = make_query(url, api_key)
         for asset in assets:

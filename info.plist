@@ -8,6 +8,17 @@
 	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
+		<key>0636830D-BBBD-46E6-BB8D-D39223E917F5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>009F3660-00E9-42E0-8EA9-D1184BE85305</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>331A5025-B293-4488-8671-959DF2B6675F</key>
 		<array>
 			<dict>
@@ -77,27 +88,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>v1token</string>
-				<key>subtext</key>
-				<string>Bearer XXXXXXXXXX</string>
-				<key>text</key>
-				<string>Enter a VersionOne Token</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>A4756849-01A1-4997-9AA0-86C5AF872B3C</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -117,6 +107,27 @@
 			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
 			<string>CA1D52CD-5655-4F7B-B8C4-EE92FD4233AB</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>v1token</string>
+				<key>subtext</key>
+				<string>Bearer XXXXXXXXXX</string>
+				<key>text</key>
+				<string>Enter a VersionOne Token</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>A4756849-01A1-4997-9AA0-86C5AF872B3C</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -161,6 +172,27 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>v1url</string>
+				<key>subtext</key>
+				<string>http://xxx.com</string>
+				<key>text</key>
+				<string>Enter a VersionOne Url</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>331A5025-B293-4488-8671-959DF2B6675F</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -180,27 +212,6 @@
 			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
 			<string>649165CB-D641-426B-AA53-7B5AE67689BF</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>v1url</string>
-				<key>subtext</key>
-				<string>http://xxx.com</string>
-				<key>text</key>
-				<string>Enter a VersionOne Url</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>331A5025-B293-4488-8671-959DF2B6675F</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -295,11 +306,35 @@
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>python set_single_value_relation.py "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>009F3660-00E9-42E0-8EA9-D1184BE85305</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>009F3660-00E9-42E0-8EA9-D1184BE85305</key>
+		<dict>
+			<key>ypos</key>
+			<real>530</real>
+		</dict>
 		<key>0636830D-BBBD-46E6-BB8D-D39223E917F5</key>
 		<dict>
 			<key>ypos</key>

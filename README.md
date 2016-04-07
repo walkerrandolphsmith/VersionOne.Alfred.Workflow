@@ -18,8 +18,11 @@ Open team room lobby:
  Open team room by name:
 > Triggers: `v1 open teamroom <team room name>`
 
- Lookup VersionOne assets by type and click on result to navigate to a asset's detail page in browser. (Stor**ies** doesn't work yet)
+ Lookup VersionOne assets by type and open asset
 > Triggers: `v1 get epics` | `v1 get storys`
 
- Lookup VersionOne asset by oid
-> Triggers: `v1 get story:12345`
+ Open VersionOne asset by oid
+> Triggers: `v1 open story:12345`
+
+ Open VersionOne asset by name
+> Triggers: `v1 open <asset-type> <asset-name>`

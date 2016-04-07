@@ -30,9 +30,11 @@ def act_according_to(query, url, api_key):
         asset_oid = asset['id']
         asset_name = asset['Attributes']['Name']['value']
         title = asset_name
-        subtitle = 'Set ' + oid + ', ' + upper_first(asset_type) + upper_first(attribute) + ' to ' + asset_name
+        subtitle = 'Set ' + oid + ', ' \
+            + upper_first(asset_type) + upper_first(attribute) \
+            + ' to ' + asset_oid + ' ' + asset_name
         link = oid + " " + asset_oid
-        wf.add_item(title, subtitle, arg=link, valid=True, icon=ICON_WARNING)
+        wf.add_item(title, subtitle, arg=link, valid=True, icon=ICON_WEB)
     wf.send_feedback()
 
 

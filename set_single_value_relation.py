@@ -1,4 +1,5 @@
 import sys
+import json
 import argparse
 from workflow import Workflow, ICON_WEB, ICON_WARNING, web, PasswordNotFound
 
@@ -40,20 +41,31 @@ def main(wf):
         oid, related_oid = query.split(' ')
         asset_type, asset_number = oid.split(':')
         query_url = url + 'rest-1.v1/Data/' + asset_type + '/' + asset_number
-        headers = dict(Authorization=api_key, Accept="application/json")
-        params = dict()
-        data = dict()
-        #params = json({
-        # "id": "Story:1185",
-        # "Attributes": {
-        #   "Status": {
-        #   "name": "Status",
-        #   "value": "StoryStatus:135",
-        #   "act": "set"
-        #  }
-        # }
-        #})
-        web.request(method='POST',url=query_url,params=params,data=data,headers=headers)
+        headers = dict({
+            "Authorization": api_key,
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+        })
+        data = dict({
+            "id": 'Story:1185',
+            "Attributes": {
+                "Status": {
+                    "name": "Status",
+                    "value": 'StoryStatus:133',
+                    "act": "set"
+                }
+            }
+        })
+        print("OID", oid)
+        print("RELATED_OID", related_oid)
+        print("ASSET_TYPE", asset_type)
+        print("ASSET#", asset_number)
+        print("URL", query_url)
+        print("HEADERS", headers)
+        print("DATA", data)
+        r = web.request(method='POST', url=query_url, data=data, headers=headers)
+        print("STATUS CODE", r.status_code)
+        #print("STATUS TEXT", r.text)
 
 
 if __name__ == u"__main__":

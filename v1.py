@@ -12,19 +12,31 @@ def make_query(url, api_key):
     r = web.get(url, params, headers)
     r.raise_for_status()
 
-    result = r.json()
-    return result['Assets']
+    return r.json()
 
 
 def get_by_asset_type(url, api_key, asset_type):
     asset_type = asset_type.title()[:-1]
     query_url = url + 'rest-1.v1/Data/' + asset_type
-    assets = make_query(query_url, api_key)
+    assets = make_query(query_url, api_key)["Assets"]
     for asset in assets:
         oid = asset['id']
         name = asset['Attributes']['Name']['value']
         arg_to_pass_on_enter_click = url + asset_type + '.mvc/Summary?oidToken=' + oid
         wf.add_item(title=name, subtitle=oid, arg=arg_to_pass_on_enter_click, valid=True, icon=ICON_WEB)
+    wf.send_feedback()
+    return 0
+
+
+def get_by_oid(url, api_key, oid):
+    asset_type = oid.split(':')[0].title()
+    asset_number = oid.split(':')[1]
+    query_url = url + 'rest-1.v1/Data/' + asset_type + '/' + asset_number
+    asset = make_query(query_url, api_key)
+    oid = asset['id']
+    name = asset['Attributes']['Name']['value']
+    arg_to_pass_on_enter_click = url + asset_type + '.mvc/Summary?oidToken=' + oid
+    wf.add_item(title=name, subtitle=oid, arg=arg_to_pass_on_enter_click, valid=True, icon=ICON_WEB)
     wf.send_feedback()
     return 0
 
@@ -65,8 +77,10 @@ def main(wf):
             team_room_name = query.split('teamroom ')[1]
             print(team_room_name)
             teamroom.open_team_room(url, api_key, team_room_name)
-        else:
+        elif ":" not in query:
             get_by_asset_type(url, api_key, query)
+        else:
+            get_by_oid(url, api_key, query)
 
 if __name__ == u"__main__":
     wf = Workflow()

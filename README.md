@@ -20,3 +20,6 @@ Open team room lobby:
 
  Lookup VersionOne assets by type and click on result to navigate to a asset's detail page in browser. (Stor**ies** doesn't work yet)
 > Triggers: `v1 get epics` | `v1 get storys`
+
+ Lookup VersionOne asset by oid
+> Triggers: `v1 get story:12345`

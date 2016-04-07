@@ -223,9 +223,9 @@
 				<key>keyword</key>
 				<string>v1 open</string>
 				<key>subtext</key>
-				<string>TeamRoom, Backlog, Epic Tree, etc</string>
-				<key>text</key>
 				<string>Open a page in VersionOne</string>
+				<key>text</key>
+				<string>open</string>
 				<key>withspace</key>
 				<true/>
 			</dict>
@@ -279,7 +279,7 @@
 				<key>subtext</key>
 				<string>Stories, Defects, Epics, Teams</string>
 				<key>title</key>
-				<string>Get assets from VersionOne</string>
+				<string>get &lt;asset-type&gt;s</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>

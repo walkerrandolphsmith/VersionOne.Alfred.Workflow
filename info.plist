@@ -63,6 +63,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>F18852B3-901E-4915-87F2-27A5617D570E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>693FF590-36A9-4107-8D14-91100C2EE50A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>walkerrandolphsmith</string>
@@ -281,6 +292,23 @@
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>693FF590-36A9-4107-8D14-91100C2EE50A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -306,6 +334,11 @@
 			<key>ypos</key>
 			<real>250</real>
 		</dict>
+		<key>693FF590-36A9-4107-8D14-91100C2EE50A</key>
+		<dict>
+			<key>ypos</key>
+			<real>610</real>
+		</dict>
 		<key>9CF2A501-304E-4C9C-A58A-C57EB235DC3D</key>
 		<dict>
 			<key>ypos</key>
@@ -329,7 +362,7 @@
 		<key>F18852B3-901E-4915-87F2-27A5617D570E</key>
 		<dict>
 			<key>ypos</key>
-			<real>650</real>
+			<real>610</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>

@@ -88,6 +88,27 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>v1token</string>
+				<key>subtext</key>
+				<string>Bearer XXXXXXXXXX</string>
+				<key>text</key>
+				<string>Enter a VersionOne Token</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>A4756849-01A1-4997-9AA0-86C5AF872B3C</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -107,27 +128,6 @@
 			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
 			<string>CA1D52CD-5655-4F7B-B8C4-EE92FD4233AB</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>v1token</string>
-				<key>subtext</key>
-				<string>Bearer XXXXXXXXXX</string>
-				<key>text</key>
-				<string>Enter a VersionOne Token</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>A4756849-01A1-4997-9AA0-86C5AF872B3C</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -221,7 +221,7 @@
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>keyword</key>
-				<string>v1 open</string>
+				<string>v1 ootp</string>
 				<key>subtext</key>
 				<string>Open a page in VersionOne</string>
 				<key>text</key>
@@ -263,7 +263,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>v1 get</string>
+				<string>v1 open</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>

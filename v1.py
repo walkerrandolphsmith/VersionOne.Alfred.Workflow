@@ -1,12 +1,11 @@
 import sys
 import argparse
-from teamrooms import teamroom
 from workflow import Workflow, ICON_WEB, ICON_WARNING, web, PasswordNotFound
 
 log = None
 
 
-def upperfirst(x):
+def upper_first(x):
     return x[0].upper() + x[1:]
 
 
@@ -19,7 +18,7 @@ def make_query(url, api_key, params=dict(sel="Name")):
 
 
 def get_by_asset_type(url, api_key, asset_type):
-    asset_type = upperfirst(asset_type)[:-1]
+    asset_type = upper_first(asset_type)[:-1]
     query_url = url + 'rest-1.v1/Data/' + asset_type
     assets = make_query(query_url, api_key)["Assets"]
     for asset in assets:
@@ -32,7 +31,7 @@ def get_by_asset_type(url, api_key, asset_type):
 
 
 def get_by_oid(url, api_key, oid):
-    asset_type = upperfirst(oid.split(':')[0])
+    asset_type = upper_first(oid.split(':')[0])
     asset_number = oid.split(':')[1]
     query_url = url + 'rest-1.v1/Data/' + asset_type + '/' + asset_number
     asset = make_query(query_url, api_key)
@@ -45,7 +44,7 @@ def get_by_oid(url, api_key, oid):
 
 
 def get_by_name(url, api_key, query):
-    asset_type = upperfirst(query.split(' ', 1)[0])
+    asset_type = upper_first(query.split(' ', 1)[0])
     name = query.split(' ', 1)[1]
     params = dict(where="Name='" + name + "'")
     query_url = url + 'rest-1.v1/Data/' + asset_type
@@ -57,6 +56,34 @@ def get_by_name(url, api_key, query):
         wf.add_item(title=name, subtitle=oid, arg=arg_to_pass_on_enter_click, valid=True, icon=ICON_WEB)
     wf.send_feedback()
     return 0
+
+
+def open_lobby(url):
+    link = url + "Default.aspx?menu=TeamRoomsPage"
+    wf.add_item('Open TeamRoom lobby', 'View all the TeamRooms', arg=link, valid=True, icon=ICON_WEB)
+    wf.send_feedback()
+
+
+def open_team_room_by_name(url, api_key, query):
+    name = query.split('teamroom ')[1]
+    query_url = url + 'rest-1.v1/Data/TeamRoom'
+    team_room_oid = make_query(query_url, api_key, params=dict(where="Name='" + name + "'"))['Assets'][0]['id'].split(':')[1]
+    link = url + 'TeamRoom.mvc/Show/' + team_room_oid
+    wf.add_item('Open TeamRoom ' + name, 'View this TeamRoom in browser', arg=link, valid=True, icon=ICON_WEB)
+    wf.send_feedback()
+
+
+def act_according_to(query, url, api_key):
+    if query == 'teamroom lobby':
+        open_lobby(url)
+    elif query.startswith('teamroom'):
+        open_team_room_by_name(url, api_key, query)
+    elif ":" in query:
+        get_by_oid(url, api_key, query)
+    elif query.endswith('s'):
+        get_by_asset_type(url, api_key, query)
+    else:
+        get_by_name(url, api_key, query)
 
 
 def main(wf):
@@ -89,17 +116,7 @@ def main(wf):
 
     query = args.query
     if query:
-        if query == 'teamroom lobby':
-            teamroom.open_lobby(url)
-        elif query.startswith('teamroom'):
-            team_room_name = query.split('teamroom ')[1]
-            teamroom.open_team_room(url, api_key, team_room_name)
-        elif ":" in query:
-            get_by_oid(url, api_key, query)
-        elif query.endswith('s'):
-            get_by_asset_type(url, api_key, query)
-        else:
-            get_by_name(url, api_key, query)
+        act_according_to(query, url, api_key)
 
 if __name__ == u"__main__":
     wf = Workflow()

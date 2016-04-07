@@ -18,6 +18,8 @@ Open team room lobby:
  Open team room by name:
 > Triggers: `v1 open teamroom <team room name>`
 
+![Open TeamRoom Lobby](./images/v1-open-teamroom-x.png)
+
  Lookup VersionOne assets by type and open asset
 > Triggers: `v1 open epics` | `v1 open storys`
 

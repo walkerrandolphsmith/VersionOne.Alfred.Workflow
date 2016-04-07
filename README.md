@@ -36,3 +36,8 @@ Open lobby:
 > Triggers: `v1 open <asset-type> <asset-name>`
 
 <img width="500" alt="colors" src="./images/v1-open-asset-by-name.png">
+
+ Set single value relations to assets
+ > Triggers: `v1 set <oid> <relation-name>`
+
+ <img width="500" alt="colors" src="./images/v1-set-single-value-relation-by-relation-name.png">

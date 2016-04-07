@@ -8,6 +8,17 @@
 	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
+		<key>0A31F4C4-1196-43B4-A16B-20FEA23F16AB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D4E06C53-5F6B-4B93-9FBD-4AAA6E177CE5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>331A5025-B293-4488-8671-959DF2B6675F</key>
 		<array>
 			<dict>
@@ -63,43 +74,6 @@
 	<string>VersionOne</string>
 	<key>objects</key>
 	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>116</integer>
-				<key>keyword</key>
-				<string>v1</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string>...</string>
-				<key>script</key>
-				<string>python v1.py "{query}"</string>
-				<key>subtext</key>
-				<string>Agile your way</string>
-				<key>title</key>
-				<string>VersionOne</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>68BC54C0-B9A5-4AB6-AE21-DAE2F7521CB6</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -230,11 +204,93 @@
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>v1 open</string>
+				<key>subtext</key>
+				<string>TeamRoom, Backlog, Epic Tree, etc</string>
+				<key>text</key>
+				<string>Open a page in VersionOne</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>0A31F4C4-1196-43B4-A16B-20FEA23F16AB</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>python v1.py "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>D4E06C53-5F6B-4B93-9FBD-4AAA6E177CE5</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>v1 get</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Loading {query}</string>
+				<key>script</key>
+				<string>python v1.py "{query}"</string>
+				<key>subtext</key>
+				<string>Stories, Defects, Epics, Teams</string>
+				<key>title</key>
+				<string>Get assets from VersionOne</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>F18852B3-901E-4915-87F2-27A5617D570E</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>0A31F4C4-1196-43B4-A16B-20FEA23F16AB</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
 		<key>331A5025-B293-4488-8671-959DF2B6675F</key>
 		<dict>
 			<key>ypos</key>
@@ -250,11 +306,6 @@
 			<key>ypos</key>
 			<real>250</real>
 		</dict>
-		<key>68BC54C0-B9A5-4AB6-AE21-DAE2F7521CB6</key>
-		<dict>
-			<key>ypos</key>
-			<real>10</real>
-		</dict>
 		<key>9CF2A501-304E-4C9C-A58A-C57EB235DC3D</key>
 		<dict>
 			<key>ypos</key>
@@ -269,6 +320,16 @@
 		<dict>
 			<key>ypos</key>
 			<real>130</real>
+		</dict>
+		<key>D4E06C53-5F6B-4B93-9FBD-4AAA6E177CE5</key>
+		<dict>
+			<key>ypos</key>
+			<real>490</real>
+		</dict>
+		<key>F18852B3-901E-4915-87F2-27A5617D570E</key>
+		<dict>
+			<key>ypos</key>
+			<real>650</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>

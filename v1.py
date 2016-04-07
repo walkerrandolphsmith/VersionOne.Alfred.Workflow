@@ -6,17 +6,30 @@ from workflow import Workflow, ICON_WEB, ICON_WARNING, web, PasswordNotFound
 log = None
 
 
-def make_query(url, api_key):
+def make_query(url, api_key, asset_type, oid=''):
     params = dict(sel="Name")
     headers = dict(Authorization=api_key, Accept="application/json")
-
-    print(params, headers, url)
-
-    r = web.get(url + 'rest-1.v1/Data/Team', params, headers)
+    if oid != '':
+        oid = '/' + oid
+    r = web.get(url + 'rest-1.v1/Data/' + asset_type + oid, params, headers)
     r.raise_for_status()
 
     result = r.json()
     return result['Assets']
+
+
+def get(url, api_key, asset_type):
+    asset_type = asset_type.title()[:-1]
+    return make_query(url, api_key, asset_type)
+
+
+def add_query_results_to_workflow_tray(assets):
+    for asset in assets:
+        oid = asset['id']
+        name = asset['Attributes']['Name']['value']
+        wf.add_item(title=name, subtitle=oid, arg=oid, valid=True, icon=ICON_WEB)
+    wf.send_feedback()
+    return 0
 
 
 def main(wf):
@@ -49,20 +62,15 @@ def main(wf):
 
     query = args.query
     if query:
-        if query == 'lobby':
+        if query == 'teamroom lobby':
             teamroom.open_lobby(url)
-        elif query.startswith('open teamroom'):
-            teamroom.open_team_room(url, api_key, query.split('open teamroom')[1])
+        elif query.startswith('teamroom'):
+            team_room_name = query.split('teamroom ')[1]
+            print(team_room_name)
+            teamroom.open_team_room(url, api_key, team_room_name)
         else:
-            print('nothing')
-    else:
-        assets = make_query(url, api_key)
-        for asset in assets:
-            title = asset['id']
-            subtitle = asset['Attributes']['Name']['value']
-            wf.add_item(title=title, subtitle=subtitle, arg="walker", valid=True, icon=ICON_WEB)
-        wf.send_feedback()
-
+            assets = get(url, api_key, query)
+            add_query_results_to_workflow_tray(assets)
 
 if __name__ == u"__main__":
     wf = Workflow()

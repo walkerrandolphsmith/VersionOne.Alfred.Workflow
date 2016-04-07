@@ -19,7 +19,7 @@ Open team room lobby:
 > Triggers: `v1 open teamroom <team room name>`
 
  Lookup VersionOne assets by type and open asset
-> Triggers: `v1 get epics` | `v1 get storys`
+> Triggers: `v1 open epics` | `v1 open storys`
 
  Open VersionOne asset by oid
 > Triggers: `v1 open story:12345`

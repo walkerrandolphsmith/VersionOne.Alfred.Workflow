@@ -8,17 +8,6 @@
 	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
-		<key>0A31F4C4-1196-43B4-A16B-20FEA23F16AB</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>D4E06C53-5F6B-4B93-9FBD-4AAA6E177CE5</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
 		<key>331A5025-B293-4488-8671-959DF2B6675F</key>
 		<array>
 			<dict>
@@ -220,46 +209,6 @@
 			<dict>
 				<key>argumenttype</key>
 				<integer>0</integer>
-				<key>keyword</key>
-				<string>v1 ootp</string>
-				<key>subtext</key>
-				<string>Open a page in VersionOne</string>
-				<key>text</key>
-				<string>open</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>0A31F4C4-1196-43B4-A16B-20FEA23F16AB</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>python v1.py "{query}"</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>D4E06C53-5F6B-4B93-9FBD-4AAA6E177CE5</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
@@ -277,9 +226,9 @@
 				<key>script</key>
 				<string>python v1.py "{query}"</string>
 				<key>subtext</key>
-				<string>Stories, Defects, Epics, Teams</string>
+				<string>Stories, Defects, Epics, TeamRoom, TeamRoom lobby</string>
 				<key>title</key>
-				<string>get &lt;asset-type&gt;s</string>
+				<string>open an asset in browser</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -309,15 +258,52 @@
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>v1 set</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>finding values</string>
+				<key>script</key>
+				<string>python set.py "{query}"</string>
+				<key>subtext</key>
+				<string>set a story's status, etc</string>
+				<key>title</key>
+				<string>Update an asset in VersionOne</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>0636830D-BBBD-46E6-BB8D-D39223E917F5</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
-		<key>0A31F4C4-1196-43B4-A16B-20FEA23F16AB</key>
+		<key>0636830D-BBBD-46E6-BB8D-D39223E917F5</key>
 		<dict>
 			<key>ypos</key>
-			<real>370</real>
+			<real>530</real>
 		</dict>
 		<key>331A5025-B293-4488-8671-959DF2B6675F</key>
 		<dict>
@@ -337,7 +323,7 @@
 		<key>693FF590-36A9-4107-8D14-91100C2EE50A</key>
 		<dict>
 			<key>ypos</key>
-			<real>610</real>
+			<real>400</real>
 		</dict>
 		<key>9CF2A501-304E-4C9C-A58A-C57EB235DC3D</key>
 		<dict>
@@ -354,15 +340,10 @@
 			<key>ypos</key>
 			<real>130</real>
 		</dict>
-		<key>D4E06C53-5F6B-4B93-9FBD-4AAA6E177CE5</key>
-		<dict>
-			<key>ypos</key>
-			<real>490</real>
-		</dict>
 		<key>F18852B3-901E-4915-87F2-27A5617D570E</key>
 		<dict>
 			<key>ypos</key>
-			<real>610</real>
+			<real>400</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>

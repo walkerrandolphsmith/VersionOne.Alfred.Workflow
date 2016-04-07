@@ -59,8 +59,10 @@ def get_by_name(url, api_key, query):
 
 
 def open_lobby(url):
-    link = url + "Default.aspx?menu=TeamRoomsPage"
-    wf.add_item('Open TeamRoom lobby', 'View all the TeamRooms', arg=link, valid=True, icon=ICON_WEB)
+    team_room_link = url + "Default.aspx?menu=TeamRoomsPage"
+    planning_room_link = url + "Default.aspx?menu=TeamRoomsPage"
+    wf.add_item('Open TeamRoom lobby', 'View all the TeamRooms', arg=team_room_link, valid=True, icon=ICON_WEB)
+    wf.add_item('Open PlanningRoom lobby', 'View all the PlanningRooms', arg=planning_room_link, valid=True, icon=ICON_WEB)
     wf.send_feedback()
 
 
@@ -74,7 +76,7 @@ def open_team_room_by_name(url, api_key, query):
 
 
 def act_according_to(query, url, api_key):
-    if query == 'teamroom lobby':
+    if query == 'lobby':
         open_lobby(url)
     elif query.startswith('teamroom'):
         open_team_room_by_name(url, api_key, query)

@@ -15,29 +15,29 @@ Enter your VersionOne API token:
 Open lobby:
 > Triggers: `v1 open lobby`
 
-<img width="500" alt="colors" src="./images/v1-open-lobby.png">
+<img width="500" alt="colors" src="./screenshots/v1-open-lobby.png">
 
  Open team room by name:
 > Triggers: `v1 open teamroom <team room name>`
 
-<img width="500" alt="colors" src="./images/v1-open-teamroom-x.png">
+<img width="500" alt="colors" src="./screenshots/v1-open-teamroom-x.png">
 
  Lookup VersionOne assets by type and open asset
 > Triggers: `v1 open epics` | `v1 open storys`
 
-<img width="500" alt="colors" src="./images/v1-open-asset-by-asset-type.png">
+<img width="500" alt="colors" src="./screenshots/v1-open-asset-by-asset-type.png">
 
  Open VersionOne asset by oid
 > Triggers: `v1 open story:12345`
 
-<img width="500" alt="colors" src="./images/v1-open-by-asset-oid.png">
+<img width="500" alt="colors" src="./screenshots/v1-open-by-asset-oid.png">
 
  Open VersionOne asset by name
 > Triggers: `v1 open <asset-type> <asset-name>`
 
-<img width="500" alt="colors" src="./images/v1-open-asset-by-name.png">
+<img width="500" alt="colors" src="./screenshots/v1-open-asset-by-name.png">
 
  Set single value relations to assets
  > Triggers: `v1 set <oid> <relation-name>`
 
- <img width="500" alt="colors" src="./images/v1-set-single-value-relation-by-relation-name.png">
+ <img width="500" alt="colors" src="./screenshots/v1-set-single-value-relation-by-relation-name.png">

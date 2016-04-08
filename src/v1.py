@@ -1,5 +1,6 @@
-import sys
 import argparse
+import sys
+
 from workflow import Workflow, ICON_WEB, ICON_WARNING, web, PasswordNotFound
 
 log = None

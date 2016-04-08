@@ -18,9 +18,7 @@ up your Python script to best utilise the :class:`Workflow` object.
 from __future__ import print_function, unicode_literals
 
 import binascii
-from contextlib import contextmanager
 import cPickle
-from copy import deepcopy
 import errno
 import json
 import logging
@@ -36,6 +34,8 @@ import subprocess
 import sys
 import time
 import unicodedata
+from contextlib import contextmanager
+from copy import deepcopy
 
 try:
     import xml.etree.cElementTree as ET

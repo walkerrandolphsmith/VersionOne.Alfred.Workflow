@@ -1,7 +1,7 @@
-import sys
-import json
 import argparse
-from workflow import Workflow, ICON_WEB, ICON_WARNING, web, PasswordNotFound
+import sys
+
+from workflow import Workflow, ICON_WARNING, web, PasswordNotFound
 
 log = None
 

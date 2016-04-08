@@ -12,6 +12,11 @@ Enter your VersionOne API token:
 //Example: Bearer XXXXXXXXXXX  
 > Triggers: `v1token`
 
+Open specific pages:
+> Triggers: `v1 open backlog` | `v1 open reports` | `v1 open iteration scheduling`
+
+<img width="500" src="./screenshots/v1-open-backlog.png">
+
 Open lobby:
 > Triggers: `v1 open lobby`
 

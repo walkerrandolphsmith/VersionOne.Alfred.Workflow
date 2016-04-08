@@ -76,11 +76,36 @@ def open_team_room_by_name(url, api_key, query):
     wf.send_feedback()
 
 
+def open_menu_item(url, item, title, subtitle, icon):
+    link = 'Default.aspx?menu=%s&feat-nav=m1' % item
+    wf.add_item(title, subtitle, arg=url + link, valid=True, icon=icon)
+    wf.send_feedback()
+
+
+def open_menu_pages():
+    return 0
+
 def act_according_to(query, url, api_key):
     if query == 'lobby':
         open_lobby(url)
     elif query.startswith('teamroom'):
         open_team_room_by_name(url, api_key, query)
+    elif query == 'pages':
+        open_menu_pages()
+    elif query == 'backlog':
+        open_menu_item(url, 'PrimaryBacklogPage', 'Open backlog', 'View product backlog', ICON_WEB)
+    elif query == 'portfolio tree':
+        open_menu_item(url, 'EpicsPortfolioPlanningPage', 'Open portfolio tree', 'View portfolio tree', ICON_WEB)
+    elif query == 'reports':
+        open_menu_item(url, 'ReportOverviewPage', 'Open reports', 'View all reports', ICON_WEB)
+    elif query == 'community of practice':
+        open_menu_item(url, 'Conversations', 'Open Community of Practice', 'View all communities of practice', ICON_WEB)
+    elif query == 'release scheduling':
+        open_menu_item(url, 'ReleaseSchedulingPage', 'Open release scheduling', 'View release scheduling', ICON_WEB)
+    elif query == 'program board':
+        open_menu_item(url, 'ProgramBoardPage', 'Open program board', 'View program board', ICON_WEB)
+    elif query == 'iteration scheduling':
+        open_menu_item(url, 'IterationSchedulingPage', 'Open iteration scheduling page', 'View iteration scheduling', ICON_WEB)
     elif ":" in query:
         get_by_oid(url, api_key, query)
     elif query.endswith('s'):

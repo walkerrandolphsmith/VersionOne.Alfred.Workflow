@@ -6,6 +6,23 @@ from workflow import Workflow, ICON_WEB, ICON_WARNING, web, PasswordNotFound
 log = None
 
 
+pages = {
+    'strategic themes': ['StrategicThemesPage', 'Open strategic themes', 'View strategic themes', ICON_WEB],
+    'epic tree': ['EpicsPortfolioPlanningPage', 'Open portfolio tree', 'View portfolio tree', ICON_WEB],
+    'epic board': ['EpicBoardPage', 'Open portfolio kanban', 'View portfolio kanban', ICON_WEB],
+    'epic timeline': ['EpicTimelinePage', 'Open epic timeline', 'View epic timeline', ICON_WEB],
+    'project timeline': ['ProjectTimelinePage', 'Open project timeline', 'View project timeline', ICON_WEB],
+
+    'backlog': ['PrimaryBacklogPage', 'Open backlog', 'View product backlog', ICON_WEB],
+    'issues': ['IssuesProductPlanningPage', 'Open blocking issues', 'View blocking issues', ICON_WEB],
+    'regression tests': ['RegressionTestPage', 'Open regression tests', 'View regression tests', ICON_WEB],
+    'reports': ['ReportOverviewPage', 'Open reports', 'View reports', ICON_WEB],
+    'cop': ['Conversations', 'Open reports', 'View reports', ICON_WEB],
+    'release scheduling': ['ReleaseSchedulingPage', 'Open release scheduling', 'View release scheduling', ICON_WEB],
+    'program board': ['ProgramBoardPage', 'Open program board', 'View program board', ICON_WEB],
+}
+
+
 def upper_first(x):
     return x[0].upper() + x[1:]
 
@@ -76,14 +93,25 @@ def open_team_room_by_name(url, api_key, query):
     wf.send_feedback()
 
 
-def open_menu_item(url, item, title, subtitle, icon):
+def get_menu_item_link(item):
+    return 'Default.aspx?menu=%s&feat-nav=m1' % item
+
+
+def open_menu_item(url, query):
+    item, title, subtitle, icon = pages[query]
     link = 'Default.aspx?menu=%s&feat-nav=m1' % item
     wf.add_item(title, subtitle, arg=url + link, valid=True, icon=icon)
     wf.send_feedback()
 
 
-def open_menu_pages():
+def open_menu_pages(url):
+    for page in pages:
+        item, title, subtitle, icon = pages[page]
+        link = 'Default.aspx?menu=%s&feat-nav=m1' % item
+        wf.add_item(title, subtitle, arg=url + link, valid=True, icon=icon)
+    wf.send_feedback()
     return 0
+
 
 def act_according_to(query, url, api_key):
     if query == 'lobby':
@@ -91,21 +119,21 @@ def act_according_to(query, url, api_key):
     elif query.startswith('teamroom'):
         open_team_room_by_name(url, api_key, query)
     elif query == 'pages':
-        open_menu_pages()
+        open_menu_pages(url)
     elif query == 'backlog':
-        open_menu_item(url, 'PrimaryBacklogPage', 'Open backlog', 'View product backlog', ICON_WEB)
+        open_menu_item(url, query)
     elif query == 'portfolio tree':
-        open_menu_item(url, 'EpicsPortfolioPlanningPage', 'Open portfolio tree', 'View portfolio tree', ICON_WEB)
+        open_menu_item(url, query)
     elif query == 'reports':
-        open_menu_item(url, 'ReportOverviewPage', 'Open reports', 'View all reports', ICON_WEB)
+        open_menu_item(url, query)
     elif query == 'community of practice':
-        open_menu_item(url, 'Conversations', 'Open Community of Practice', 'View all communities of practice', ICON_WEB)
+        open_menu_item(url, query)
     elif query == 'release scheduling':
-        open_menu_item(url, 'ReleaseSchedulingPage', 'Open release scheduling', 'View release scheduling', ICON_WEB)
+        open_menu_item(url, query)
     elif query == 'program board':
-        open_menu_item(url, 'ProgramBoardPage', 'Open program board', 'View program board', ICON_WEB)
+        open_menu_item(url, query)
     elif query == 'iteration scheduling':
-        open_menu_item(url, 'IterationSchedulingPage', 'Open iteration scheduling page', 'View iteration scheduling', ICON_WEB)
+        open_menu_item(url, query)
     elif ":" in query:
         get_by_oid(url, api_key, query)
     elif query.endswith('s'):

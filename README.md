@@ -12,6 +12,11 @@ Enter your VersionOne API token:
 //Example: Bearer XXXXXXXXXXX  
 > Triggers: `v1token`
 
+ Open any page:
+> Triggers: `v1 open pages`
+
+<img width="500" src="./screenshots/v1-open-pages.png">
+
 Open specific pages:
 > Triggers: `v1 open backlog` | `v1 open reports` | `v1 open iteration scheduling`
 
@@ -23,9 +28,9 @@ Open lobby:
 <img width="500" src="./screenshots/v1-open-lobby.png">
 
  Open team room by name:
-> Triggers: `v1 open teamroom <team room name>`
+> Triggers: `v1 open teamroom <teamroom-name>`
 
-<img width="500" src="./screenshots/v1-open-teamroom-x.png">
+<img width="500" src="./screenshots/v1-open-teamroom.png">
 
  Lookup VersionOne assets by type and open asset
 > Triggers: `v1 open epics` | `v1 open storys`

@@ -5,12 +5,27 @@
 
 ## Workflows
 
+###Settings
+
 Enter your VersionOne instance's url  
 > Triggers: `v1url`  
 
 Enter your VersionOne API token: 
 //Example: Bearer XXXXXXXXXXX  
 > Triggers: `v1token`
+
+View your VersionOne instance's url
+> Triggers: `v1 settings view url`
+
+<img width="500" src="./screenshots/v1-settings-view-url.png">
+
+Change your VersionOne instance's url
+> Triggers: `v1 settings update url <new-url>`
+
+<img width="500" src="./screenshots/v1-settings-update-url.png">
+
+
+###Open pages and assets
 
  Open any page:
 > Triggers: `v1 open pages`
@@ -46,6 +61,9 @@ Open lobby:
 > Triggers: `v1 open <asset-type> <asset-name>`
 
 <img width="500" src="./screenshots/v1-open-asset-by-name.png">
+
+
+###Update assets
 
  Set single value relations to assets
  > Triggers: `v1 set <oid> <relation-name>`

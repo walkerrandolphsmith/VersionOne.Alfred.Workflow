@@ -88,27 +88,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>v1token</string>
-				<key>subtext</key>
-				<string>Bearer XXXXXXXXXX</string>
-				<key>text</key>
-				<string>Enter a VersionOne Token</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>A4756849-01A1-4997-9AA0-86C5AF872B3C</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -128,6 +107,27 @@
 			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
 			<string>CA1D52CD-5655-4F7B-B8C4-EE92FD4233AB</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>v1token</string>
+				<key>subtext</key>
+				<string>Bearer XXXXXXXXXX</string>
+				<key>text</key>
+				<string>Enter a VersionOne Token</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>A4756849-01A1-4997-9AA0-86C5AF872B3C</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -325,6 +325,43 @@
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>v1 settings</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>...</string>
+				<key>script</key>
+				<string>python src/settings.py "{query}"</string>
+				<key>subtext</key>
+				<string>View and update settings</string>
+				<key>title</key>
+				<string>VersionOne Alfred Settings</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>6C00A6DE-7A08-4E8E-99D0-F4A7756093FA</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -359,6 +396,11 @@
 		<dict>
 			<key>ypos</key>
 			<real>400</real>
+		</dict>
+		<key>6C00A6DE-7A08-4E8E-99D0-F4A7756093FA</key>
+		<dict>
+			<key>ypos</key>
+			<real>650</real>
 		</dict>
 		<key>9CF2A501-304E-4C9C-A58A-C57EB235DC3D</key>
 		<dict>

@@ -28,6 +28,8 @@ def upper_first(x):
 
 
 def make_query(url, api_key, params=dict(sel="Name")):
+    if not api_key.startswith('Bearer '):
+        api_key = 'Bearer ' + api_key
     headers = dict(Authorization=api_key, Accept="application/json")
     r = web.get(url, params, headers)
     r.raise_for_status()

@@ -1,7 +1,7 @@
 import argparse
 import sys
 
-from workflow import Workflow, ICON_WEB
+from workflow import Workflow, ICON_WEB, PasswordNotFound
 
 log = None
 
@@ -34,9 +34,21 @@ def main(wf):
             wf.add_item(url, 'VersionOne url previously set', valid=False, icon=ICON_WEB)
             wf.send_feedback()
         if query.startswith('update url'):
-            new_url = query.split('update url')[1]
+            new_url = query.split('update url ')[1]
             wf.settings['url'] = new_url
             wf.add_item(new_url, 'VersionOne url updated', valid=False, icon=ICON_WEB)
+            wf.send_feedback()
+        if query == 'view token':
+            try:
+                api_key = wf.get_password('api_key')
+                wf.add_item(api_key, 'VersionOne token previously set', valid=False, icon=ICON_WEB)
+                wf.send_feedback()
+            except PasswordNotFound:
+                return 0
+        if query.startswith('update token'):
+            new_token = query.split('update token ')[1]
+            wf.save_password('api_key', new_token)
+            wf.add_item(new_token, 'VersionOne token updated', valid=False, icon=ICON_WEB)
             wf.send_feedback()
         if query == 'view pages':
             pgs = wf.settings.get('pages')

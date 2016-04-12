@@ -13,7 +13,9 @@ def main(wf):
         'view_url': v1.view_url,
         'set_token': v1.set_token,
         'view_token': v1.view_token,
-        'open_menu_pages': v1.open_menu_pages
+        'open_menu_pages': v1.open_menu_pages,
+        'open_lobby': v1.open_lobby,
+        'open_page': v1.open
     }
 
     results = options[command](query)

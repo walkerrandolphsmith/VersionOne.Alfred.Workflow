@@ -85,3 +85,40 @@ class V1(object):
             }
             results.append(info)
         return results
+
+    def open_lobby(self, query):
+        url = self.get_url()
+        return [
+            {
+                "title": 'Open TeamRoom Lobby',
+                "subtitle": 'View all TeamRooms',
+                "arg": url + "Default.aspx?menu=TeamRoomsPage",
+                "valid": True,
+                "icon": ICON_WEB
+            },
+            {
+                "title": 'Open PlanningRoom Lobby',
+                "subtitle": 'View all PlanningRooms',
+                "arg": url + "Default.aspx?menu=PlanningRoomsPage",
+                "valid": True,
+                "icon": ICON_WEB
+            }
+        ]
+
+    def open(self, query):
+        url = self.get_url()
+        page = self._workflow.settings['pages'][query]
+        if page:
+            link, title, subtitle, icon = page
+            return [
+                {
+                    "title": title,
+                    "subtitle": subtitle,
+                    "arg": '%sDefault.aspx?menu=%s&feat-nav=m1' % (url, link),
+                    "valid": True,
+                    "icon": icon
+
+                }
+            ]
+        else:
+            return []

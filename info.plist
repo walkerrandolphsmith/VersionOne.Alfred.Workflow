@@ -41,22 +41,33 @@
 				<string></string>
 			</dict>
 		</array>
-		<key>D87DACF0-846F-4137-A5E2-D5809230A041</key>
+		<key>6DF1113F-65AB-40D5-96F2-C962D1712E74</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>2DB01220-124A-432D-91AE-64592902A516</string>
+				<string>DF0EA215-3F3D-4883-B8B1-C8D9B1BFD42F</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 			</dict>
 		</array>
-		<key>F18852B3-901E-4915-87F2-27A5617D570E</key>
+		<key>8A1F57E8-0CE7-4D02-93A0-189E1E42EAC8</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>693FF590-36A9-4107-8D14-91100C2EE50A</string>
+				<string>5B76BFD6-8331-4CCF-9D48-D11F6F398D48</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>D87DACF0-846F-4137-A5E2-D5809230A041</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2DB01220-124A-432D-91AE-64592902A516</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -220,43 +231,6 @@
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>keyword</key>
-				<string>v1 settings</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string>...</string>
-				<key>script</key>
-				<string>python src/settings.py "{query}"</string>
-				<key>subtext</key>
-				<string>View and update settings</string>
-				<key>title</key>
-				<string>VersionOne Alfred Settings</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>6C00A6DE-7A08-4E8E-99D0-F4A7756093FA</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>escaping</key>
 				<integer>102</integer>
@@ -315,7 +289,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>v1 close</string>
+				<string>v1 open</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -325,13 +299,13 @@
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string>Loading {query}</string>
+				<string>Loading...</string>
 				<key>script</key>
-				<string>python src/v1.py "{query}"</string>
+				<string>python src/main.py open_page {query}</string>
 				<key>subtext</key>
-				<string>Stories, Defects, Epics, TeamRoom, TeamRoom lobby</string>
+				<string>Backlog, Portfolio Tree, Reports</string>
 				<key>title</key>
-				<string>open an asset in browser</string>
+				<string>Open a specific page in the browser</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -340,7 +314,7 @@
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>F18852B3-901E-4915-87F2-27A5617D570E</string>
+			<string>8A1F57E8-0CE7-4D02-93A0-189E1E42EAC8</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -357,7 +331,61 @@
 			<key>type</key>
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
-			<string>693FF590-36A9-4107-8D14-91100C2EE50A</string>
+			<string>5B76BFD6-8331-4CCF-9D48-D11F6F398D48</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>v1 open lobby</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Loading...</string>
+				<key>script</key>
+				<string>python src/main.py open_lobby "{query}"</string>
+				<key>subtext</key>
+				<string>View all TeamRooms or PlanningRooms</string>
+				<key>title</key>
+				<string>Open TeamRoom and PlanningRoom lobbies</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>6DF1113F-65AB-40D5-96F2-C962D1712E74</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>DF0EA215-3F3D-4883-B8B1-C8D9B1BFD42F</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -425,7 +453,7 @@
 		<key>0636830D-BBBD-46E6-BB8D-D39223E917F5</key>
 		<dict>
 			<key>ypos</key>
-			<real>830</real>
+			<real>1100</real>
 		</dict>
 		<key>121B5FD3-B03B-4FBA-B848-DF6DBFF47006</key>
 		<dict>
@@ -450,27 +478,32 @@
 		<key>4BD9F517-CD0F-49B6-8AD6-61F6D1D1EE12</key>
 		<dict>
 			<key>ypos</key>
-			<real>830</real>
+			<real>1100</real>
 		</dict>
 		<key>4F0BB343-9284-421C-846D-E6489CBC56DB</key>
 		<dict>
 			<key>ypos</key>
 			<real>570</real>
 		</dict>
+		<key>5B76BFD6-8331-4CCF-9D48-D11F6F398D48</key>
+		<dict>
+			<key>ypos</key>
+			<real>680</real>
+		</dict>
 		<key>6306C476-5FC5-4035-B293-74DD7A737566</key>
 		<dict>
 			<key>ypos</key>
 			<real>570</real>
 		</dict>
-		<key>693FF590-36A9-4107-8D14-91100C2EE50A</key>
+		<key>6DF1113F-65AB-40D5-96F2-C962D1712E74</key>
+		<dict>
+			<key>ypos</key>
+			<real>790</real>
+		</dict>
+		<key>8A1F57E8-0CE7-4D02-93A0-189E1E42EAC8</key>
 		<dict>
 			<key>ypos</key>
 			<real>680</real>
-		</dict>
-		<key>6C00A6DE-7A08-4E8E-99D0-F4A7756093FA</key>
-		<dict>
-			<key>ypos</key>
-			<real>440</real>
 		</dict>
 		<key>BE11A3C9-3FF4-49C5-A593-5C95A16D18C6</key>
 		<dict>
@@ -482,10 +515,10 @@
 			<key>ypos</key>
 			<real>10</real>
 		</dict>
-		<key>F18852B3-901E-4915-87F2-27A5617D570E</key>
+		<key>DF0EA215-3F3D-4883-B8B1-C8D9B1BFD42F</key>
 		<dict>
 			<key>ypos</key>
-			<real>680</real>
+			<real>790</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>

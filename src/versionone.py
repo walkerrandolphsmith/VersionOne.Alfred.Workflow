@@ -1,4 +1,4 @@
-from workflow import web, ICON_ACCOUNT, ICON_WEB
+from workflow import web, PasswordNotFound, ICON_ACCOUNT, ICON_WEB
 
 class V1(object):
     def __init__(self, workflow):
@@ -45,6 +45,29 @@ class V1(object):
             self._workflow.add_item("No VersionOne url set, please set using command: 'v1 set url'")
             self._workflow.send_feedback()
         return url
+
+    def set_token(self, token):
+        self._workflow.save_password('api_key', token)
+        self._workflow.settings.save()
+
+    def view_token(self, query):
+        token = self.get_token()
+        info = {
+            "title": token,
+            "subtitle": 'Current VersionOne instance token',
+            "arg": None,
+            "valid": False,
+            "icon": ICON_ACCOUNT
+        }
+        return [info]
+
+    def get_token(self):
+        try:
+            token = self._workflow.get_password('api_key')
+        except PasswordNotFound:
+            self._workflow.add_item("No VersionOne token set, please set using command: 'v1 set token'")
+            self._workflow.send_feedback()
+        return token
 
     def open_menu_pages(self, query):
         results = []

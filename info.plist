@@ -12,18 +12,18 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>009F3660-00E9-42E0-8EA9-D1184BE85305</string>
+				<string>4BD9F517-CD0F-49B6-8AD6-61F6D1D1EE12</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 			</dict>
 		</array>
-		<key>331A5025-B293-4488-8671-959DF2B6675F</key>
+		<key>121B5FD3-B03B-4FBA-B848-DF6DBFF47006</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>9CF2A501-304E-4C9C-A58A-C57EB235DC3D</string>
+				<string>48766C94-3263-408C-A7C3-F52FD7FBD6A7</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -35,39 +35,6 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>6306C476-5FC5-4035-B293-74DD7A737566</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>5F3FB43E-3450-40AC-8F2B-8D17BA5357C0</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>CA1D52CD-5655-4F7B-B8C4-EE92FD4233AB</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>9CF2A501-304E-4C9C-A58A-C57EB235DC3D</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>649165CB-D641-426B-AA53-7B5AE67689BF</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
-		<key>A4756849-01A1-4997-9AA0-86C5AF872B3C</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>5F3FB43E-3450-40AC-8F2B-8D17BA5357C0</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -107,283 +74,6 @@
 	<string>VersionOne</string>
 	<key>objects</key>
 	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>keyword</key>
-				<string>v1 settings</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string>...</string>
-				<key>script</key>
-				<string>python src/settings.py "{query}"</string>
-				<key>subtext</key>
-				<string>View and update settings</string>
-				<key>title</key>
-				<string>VersionOne Alfred Settings</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>6C00A6DE-7A08-4E8E-99D0-F4A7756093FA</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>output</key>
-				<integer>0</integer>
-				<key>removeextension</key>
-				<false/>
-				<key>sticky</key>
-				<false/>
-				<key>text</key>
-				<string>VersionOne token saved successfully.</string>
-				<key>title</key>
-				<string>VersionOne Token Saved</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>CA1D52CD-5655-4F7B-B8C4-EE92FD4233AB</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>v1token</string>
-				<key>subtext</key>
-				<string>Bearer XXXXXXXXXX</string>
-				<key>text</key>
-				<string>Enter a VersionOne Token</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>A4756849-01A1-4997-9AA0-86C5AF872B3C</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>python v1.py --setkey "{query}" </string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>5F3FB43E-3450-40AC-8F2B-8D17BA5357C0</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>python v1.py --seturl "{query}"</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>9CF2A501-304E-4C9C-A58A-C57EB235DC3D</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>v1url</string>
-				<key>subtext</key>
-				<string>http://xxx.com</string>
-				<key>text</key>
-				<string>Enter a VersionOne Url</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>331A5025-B293-4488-8671-959DF2B6675F</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>output</key>
-				<integer>0</integer>
-				<key>removeextension</key>
-				<false/>
-				<key>sticky</key>
-				<false/>
-				<key>text</key>
-				<string>VersionOne Url saved successfully</string>
-				<key>title</key>
-				<string>VersionOne Url saved</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>649165CB-D641-426B-AA53-7B5AE67689BF</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>keyword</key>
-				<string>v1 close</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string>Loading {query}</string>
-				<key>script</key>
-				<string>python src/v1.py "{query}"</string>
-				<key>subtext</key>
-				<string>Stories, Defects, Epics, TeamRoom, TeamRoom lobby</string>
-				<key>title</key>
-				<string>open an asset in browser</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>F18852B3-901E-4915-87F2-27A5617D570E</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>plusspaces</key>
-				<false/>
-				<key>url</key>
-				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>693FF590-36A9-4107-8D14-91100C2EE50A</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>keyword</key>
-				<string>v1 setter</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string>finding values</string>
-				<key>script</key>
-				<string>python src/set.py "{query}"</string>
-				<key>subtext</key>
-				<string>set a story's status, etc</string>
-				<key>title</key>
-				<string>Update an asset in VersionOne</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>0636830D-BBBD-46E6-BB8D-D39223E917F5</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>python src/set_single_value_relation.py "{query}"</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.script</string>
-			<key>uid</key>
-			<string>009F3660-00E9-42E0-8EA9-D1184BE85305</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -459,6 +149,114 @@
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>v1 set token</string>
+				<key>text</key>
+				<string>Set VersionOne Api Token</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>121B5FD3-B03B-4FBA-B848-DF6DBFF47006</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>python src/main.py set_token "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>48766C94-3263-408C-A7C3-F52FD7FBD6A7</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>v1 view token</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>script</key>
+				<string>python src/main.py view_token "{query}"</string>
+				<key>title</key>
+				<string>View the current VersionOne API token</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>2F946A7B-EBAE-499E-A6DC-D0A735346E3B</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>v1 settings</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>...</string>
+				<key>script</key>
+				<string>python src/settings.py "{query}"</string>
+				<key>subtext</key>
+				<string>View and update settings</string>
+				<key>title</key>
+				<string>VersionOne Alfred Settings</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>6C00A6DE-7A08-4E8E-99D0-F4A7756093FA</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>escaping</key>
 				<integer>102</integer>
@@ -509,90 +307,185 @@
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>v1 close</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Loading {query}</string>
+				<key>script</key>
+				<string>python src/v1.py "{query}"</string>
+				<key>subtext</key>
+				<string>Stories, Defects, Epics, TeamRoom, TeamRoom lobby</string>
+				<key>title</key>
+				<string>open an asset in browser</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>F18852B3-901E-4915-87F2-27A5617D570E</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>693FF590-36A9-4107-8D14-91100C2EE50A</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>python src/set_single_value_relation.py "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>4BD9F517-CD0F-49B6-8AD6-61F6D1D1EE12</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>v1 set relation</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>finding values</string>
+				<key>script</key>
+				<string>python src/set.py "{query}"</string>
+				<key>subtext</key>
+				<string>set a story's status, etc</string>
+				<key>title</key>
+				<string>Update an asset in VersionOne</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>0636830D-BBBD-46E6-BB8D-D39223E917F5</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
-		<key>009F3660-00E9-42E0-8EA9-D1184BE85305</key>
-		<dict>
-			<key>ypos</key>
-			<real>530</real>
-		</dict>
 		<key>0636830D-BBBD-46E6-BB8D-D39223E917F5</key>
 		<dict>
 			<key>ypos</key>
-			<real>530</real>
+			<real>830</real>
+		</dict>
+		<key>121B5FD3-B03B-4FBA-B848-DF6DBFF47006</key>
+		<dict>
+			<key>ypos</key>
+			<real>220</real>
 		</dict>
 		<key>2DB01220-124A-432D-91AE-64592902A516</key>
 		<dict>
 			<key>ypos</key>
-			<real>660</real>
+			<real>10</real>
 		</dict>
-		<key>331A5025-B293-4488-8671-959DF2B6675F</key>
+		<key>2F946A7B-EBAE-499E-A6DC-D0A735346E3B</key>
 		<dict>
 			<key>ypos</key>
-			<real>250</real>
+			<real>320</real>
+		</dict>
+		<key>48766C94-3263-408C-A7C3-F52FD7FBD6A7</key>
+		<dict>
+			<key>ypos</key>
+			<real>220</real>
+		</dict>
+		<key>4BD9F517-CD0F-49B6-8AD6-61F6D1D1EE12</key>
+		<dict>
+			<key>ypos</key>
+			<real>830</real>
 		</dict>
 		<key>4F0BB343-9284-421C-846D-E6489CBC56DB</key>
 		<dict>
 			<key>ypos</key>
-			<real>880</real>
-		</dict>
-		<key>5F3FB43E-3450-40AC-8F2B-8D17BA5357C0</key>
-		<dict>
-			<key>ypos</key>
-			<real>130</real>
+			<real>570</real>
 		</dict>
 		<key>6306C476-5FC5-4035-B293-74DD7A737566</key>
 		<dict>
 			<key>ypos</key>
-			<real>880</real>
-		</dict>
-		<key>649165CB-D641-426B-AA53-7B5AE67689BF</key>
-		<dict>
-			<key>ypos</key>
-			<real>250</real>
+			<real>570</real>
 		</dict>
 		<key>693FF590-36A9-4107-8D14-91100C2EE50A</key>
 		<dict>
 			<key>ypos</key>
-			<real>400</real>
+			<real>680</real>
 		</dict>
 		<key>6C00A6DE-7A08-4E8E-99D0-F4A7756093FA</key>
 		<dict>
 			<key>ypos</key>
-			<real>10</real>
-		</dict>
-		<key>9CF2A501-304E-4C9C-A58A-C57EB235DC3D</key>
-		<dict>
-			<key>ypos</key>
-			<real>250</real>
-		</dict>
-		<key>A4756849-01A1-4997-9AA0-86C5AF872B3C</key>
-		<dict>
-			<key>ypos</key>
-			<real>130</real>
+			<real>440</real>
 		</dict>
 		<key>BE11A3C9-3FF4-49C5-A593-5C95A16D18C6</key>
 		<dict>
 			<key>ypos</key>
-			<real>770</real>
-		</dict>
-		<key>CA1D52CD-5655-4F7B-B8C4-EE92FD4233AB</key>
-		<dict>
-			<key>ypos</key>
-			<real>130</real>
+			<real>110</real>
 		</dict>
 		<key>D87DACF0-846F-4137-A5E2-D5809230A041</key>
 		<dict>
 			<key>ypos</key>
-			<real>660</real>
+			<real>10</real>
 		</dict>
 		<key>F18852B3-901E-4915-87F2-27A5617D570E</key>
 		<dict>
 			<key>ypos</key>
-			<real>400</real>
+			<real>680</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>

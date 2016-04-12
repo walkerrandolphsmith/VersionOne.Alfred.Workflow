@@ -11,6 +11,8 @@ def main(wf):
     options = {
         'set_url': v1.set_url,
         'view_url': v1.view_url,
+        'set_token': v1.set_token,
+        'view_token': v1.view_token,
         'open_menu_pages': v1.open_menu_pages
     }
 

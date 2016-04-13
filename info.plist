@@ -41,6 +41,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>692FCA22-0D7B-4484-B4F6-4FAE6D2B10DE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0CDAB4BA-42A7-4776-BDA6-6C4629F903B4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>6DF1113F-65AB-40D5-96F2-C962D1712E74</key>
 		<array>
 			<dict>
@@ -392,6 +403,56 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>0CDAB4BA-42A7-4776-BDA6-6C4629F903B4</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>v1 open teamroom</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>script</key>
+				<string>python src/main.py open_teamroom "{query}"</string>
+				<key>title</key>
+				<string>Open TeamRoom by name</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>692FCA22-0D7B-4484-B4F6-4FAE6D2B10DE</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -455,6 +516,11 @@
 			<key>ypos</key>
 			<real>1100</real>
 		</dict>
+		<key>0CDAB4BA-42A7-4776-BDA6-6C4629F903B4</key>
+		<dict>
+			<key>ypos</key>
+			<real>900</real>
+		</dict>
 		<key>121B5FD3-B03B-4FBA-B848-DF6DBFF47006</key>
 		<dict>
 			<key>ypos</key>
@@ -494,6 +560,11 @@
 		<dict>
 			<key>ypos</key>
 			<real>570</real>
+		</dict>
+		<key>692FCA22-0D7B-4484-B4F6-4FAE6D2B10DE</key>
+		<dict>
+			<key>ypos</key>
+			<real>900</real>
 		</dict>
 		<key>6DF1113F-65AB-40D5-96F2-C962D1712E74</key>
 		<dict>

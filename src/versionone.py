@@ -23,6 +23,19 @@ class V1(object):
             'program board': ['ProgramBoardPage', 'Open program board', 'View program board', ICON_WEB],
         }
 
+    def make_query(self, url, params=dict(sel="Name")):
+        base_url = self.get_url()
+        token = self.get_token()
+        if not token.startswith('Bearer '):
+            token = 'Bearer ' + token
+
+        rest_url = '%srest-1.v1/Data/%s' % (base_url, url)
+        headers = dict(Authorization=token, Accept="application/json")
+        r = web.get(rest_url, params, headers)
+        r.raise_for_status()
+
+        return r.json()
+
     def set_url(self, url):
         self._workflow.settings['url'] = url
         self._workflow.settings.save()
@@ -122,3 +135,17 @@ class V1(object):
             ]
         else:
             return []
+
+    def open_teamroom(self, name):
+        url = self.get_url()
+        results = self.make_query('TeamRoom', params=dict(where="Name='" + name + "'"))
+        team_room_oid = results['Assets'][0]['id'].split(':')[1]
+        return [
+            {
+                "title": 'Open TeamRoom %s' % name,
+                "subtitle": 'View TeamRoom in browser',
+                "arg": '%sTeamRoom.mvc/Show/%s' % (url, team_room_oid),
+                "valid": True,
+                "icon": ICON_WEB
+            }
+        ]

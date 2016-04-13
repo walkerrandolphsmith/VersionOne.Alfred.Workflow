@@ -60,19 +60,8 @@ def get_by_name(url, api_key, query):
     return 0
 
 
-def open_team_room_by_name(url, api_key, query):
-    name = query.split('teamroom ')[1]
-    query_url = url + 'rest-1.v1/Data/TeamRoom'
-    team_room_oid = make_query(query_url, api_key, params=dict(where="Name='" + name + "'"))['Assets'][0]['id'].split(':')[1]
-    link = url + 'TeamRoom.mvc/Show/' + team_room_oid
-    wf.add_item('Open TeamRoom ' + name, 'View this TeamRoom in browser', arg=link, valid=True, icon=ICON_WEB)
-    wf.send_feedback()
-
-
 def act_according_to(query, url, api_key):
-    if query.startswith('teamroom'):
-        open_team_room_by_name(url, api_key, query)
-    elif ":" in query:
+    if ":" in query:
         get_by_oid(url, api_key, query)
     elif query.endswith('s'):
         get_by_asset_type(url, api_key, query)

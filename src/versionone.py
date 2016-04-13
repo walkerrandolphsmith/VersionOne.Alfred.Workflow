@@ -194,3 +194,65 @@ class V1(object):
             }
         ]
 
+    '''
+    def get_by_name(url, api_key, query):
+        asset_type = upper_first(query.split(' ', 1)[0])
+        name = query.split(' ', 1)[1]
+        params = dict(where="Name='" + name + "'")
+        query_url = url + 'rest-1.v1/Data/' + asset_type
+        assets = make_query(query_url, api_key, params)["Assets"]
+        for asset in assets:
+            oid = asset['id']
+            name = asset['Attributes']['Name']['value']
+            arg_to_pass_on_enter_click = url + asset_type + '.mvc/Summary?oidToken=' + oid
+            wf.add_item(title=name, subtitle=oid, arg=arg_to_pass_on_enter_click, valid=True, icon=ICON_WEB)
+        wf.send_feedback()
+        return 0
+    '''
+
+
+
+    '''
+    def set(query, url, api_key):
+        parts = query.split(' ', 3)
+
+        oid, attribute = parts
+        asset_type, asset_number = oid.split(':')
+        # get all the attribute values
+
+        query_url = url + 'rest-1.v1/Data/' + upper_first(asset_type) + upper_first(attribute)
+        assets = make_query(query_url, api_key)['Assets']
+        for asset in assets:
+            asset_oid = asset['id']
+            asset_name = asset['Attributes']['Name']['value']
+            title = asset_name
+            subtitle = 'Set ' + oid + ', ' \
+                + upper_first(asset_type) + upper_first(attribute) \
+                + ' to ' + asset_oid + ' ' + asset_name
+            link = oid + " " + asset_oid
+            wf.add_item(title, subtitle, arg=link, valid=True, icon=ICON_WEB)
+        wf.send_feedback()
+    '''
+
+
+    '''
+    def rest_post(query)
+        oid, related_oid = query.split(' ')
+            asset_type, asset_number = oid.split(':')
+            query_url = url + 'rest-1.v1/Data/' + asset_type + '/' + asset_number
+            headers = dict({
+                "Authorization": api_key,
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            })
+            data = dict({
+                "id": 'Story:1185',
+                "Attributes": {
+                    "Status": {
+                        "name": "Status",
+                        "value": 'StoryStatus:133',
+                        "act": "set"
+                    }
+                }
+            })
+    '''

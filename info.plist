@@ -8,17 +8,6 @@
 	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
-		<key>0636830D-BBBD-46E6-BB8D-D39223E917F5</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>4BD9F517-CD0F-49B6-8AD6-61F6D1D1EE12</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-			</dict>
-		</array>
 		<key>121B5FD3-B03B-4FBA-B848-DF6DBFF47006</key>
 		<array>
 			<dict>
@@ -513,72 +502,11 @@
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>python src/set_single_value_relation.py "{query}"</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>4BD9F517-CD0F-49B6-8AD6-61F6D1D1EE12</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>keyword</key>
-				<string>v1 set relation</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string>finding values</string>
-				<key>script</key>
-				<string>python src/set.py "{query}"</string>
-				<key>subtext</key>
-				<string>set a story's status, etc</string>
-				<key>title</key>
-				<string>Update an asset in VersionOne</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>0636830D-BBBD-46E6-BB8D-D39223E917F5</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
-		<key>0636830D-BBBD-46E6-BB8D-D39223E917F5</key>
-		<dict>
-			<key>ypos</key>
-			<real>1100</real>
-		</dict>
 		<key>0CDAB4BA-42A7-4776-BDA6-6C4629F903B4</key>
 		<dict>
 			<key>ypos</key>
@@ -603,11 +531,6 @@
 		<dict>
 			<key>ypos</key>
 			<real>220</real>
-		</dict>
-		<key>4BD9F517-CD0F-49B6-8AD6-61F6D1D1EE12</key>
-		<dict>
-			<key>ypos</key>
-			<real>1100</real>
 		</dict>
 		<key>4F0BB343-9284-421C-846D-E6489CBC56DB</key>
 		<dict>

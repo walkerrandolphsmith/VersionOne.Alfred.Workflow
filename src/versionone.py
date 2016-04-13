@@ -36,6 +36,9 @@ class V1(object):
 
         return r.json()
 
+    def upper_first(self, x):
+        return x[0].upper() + x[1:]
+
     def set_url(self, url):
         self._workflow.settings['url'] = url
         self._workflow.settings.save()
@@ -149,3 +152,45 @@ class V1(object):
                 "icon": ICON_WEB
             }
         ]
+
+    def open(self, query):
+        if ":" in query:
+            return self.open_by_oid_token(query)
+        elif query.endswith('s'):
+            return self.open_by_asset_type(query)
+        else:
+            return []
+
+    def open_by_asset_type(self, asset_type):
+        url = self.get_url()
+        asset_type = self.upper_first(asset_type)[:-1]
+        assets = self.make_query(asset_type)["Assets"]
+        results = []
+        for asset in assets:
+            oid = asset['id']
+            info = {
+                "title": asset['Attributes']['Name']['value'],
+                "subtitle": oid,
+                "arg": url + asset_type + '.mvc/Summary?oidToken=' + oid,
+                "valid": True,
+                "icon": ICON_WEB
+            }
+            results.append(info)
+        return results
+
+    def open_by_oid_token(self, oid):
+        url = self.get_url()
+        asset_type, asset_number = oid.split(':')
+        asset_type = self.upper_first(asset_type)
+        asset = self.make_query(asset_type + '/' + asset_number)
+        oid = asset['id']
+        return [
+            {
+                "title": oid,
+                "subtitle": asset['Attributes']['Name']['value'],
+                "arg": url + asset_type + '.mvc/Summary?oidToken=' + oid,
+                "valid": True,
+                "icon": ICON_WEB
+            }
+        ]
+

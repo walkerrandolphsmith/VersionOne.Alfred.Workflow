@@ -16,7 +16,8 @@ def main(wf):
         'open_menu_pages': v1.open_menu_pages,
         'open_lobby': v1.open_lobby,
         'open_page': v1.open,
-        'open_teamroom': v1.open_teamroom
+        'open_teamroom': v1.open_teamroom,
+        'open': v1.open
     }
 
     results = options[command](query)

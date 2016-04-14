@@ -17,7 +17,8 @@ def main(wf):
         'open_lobby': v1.open_lobby,
         'open_page': v1.open_page,
         'open_teamroom': v1.open_teamroom,
-        'open': v1.open
+        'open': v1.open_by_asset_type,
+        'open_by_id': v1.open_by_oid_token
     }
 
     results = options[command](query)

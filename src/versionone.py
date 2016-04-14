@@ -39,10 +39,12 @@ class V1(object):
     def upper_first(self, x):
         return x[0].upper() + x[1:]
 
+    # v1 set url <url>
     def set_url(self, url):
         self._workflow.settings['url'] = url
         self._workflow.settings.save()
 
+    # v1 view url
     def view_url(self, query):
         url = self.get_url()
         info = {
@@ -62,10 +64,12 @@ class V1(object):
             self._workflow.send_feedback()
         return url
 
+    # v1 set token <token>
     def set_token(self, token):
         self._workflow.save_password('api_key', token)
         self._workflow.settings.save()
 
+    # v1 view token
     def view_token(self, query):
         token = self.get_token()
         info = {
@@ -85,6 +89,7 @@ class V1(object):
             self._workflow.send_feedback()
         return token
 
+    # v1 open pages
     def open_menu_pages(self, query):
         results = []
         url = self._workflow.settings['url']
@@ -102,6 +107,7 @@ class V1(object):
             results.append(info)
         return results
 
+    # v1 open lobby
     def open_lobby(self, query):
         url = self.get_url()
         return [
@@ -121,7 +127,8 @@ class V1(object):
             }
         ]
 
-    def open(self, query):
+    # v1 open page <name>
+    def open_page(self, query):
         url = self.get_url()
         page = self._workflow.settings['pages'][query]
         if page:
@@ -139,6 +146,7 @@ class V1(object):
         else:
             return []
 
+    # v1 open teamroom <name>
     def open_teamroom(self, name):
         url = self.get_url()
         results = self.make_query('TeamRoom', params=dict(where="Name='" + name + "'"))
@@ -153,15 +161,10 @@ class V1(object):
             }
         ]
 
-    def open(self, query):
-        if ":" in query:
-            return self.open_by_oid_token(query)
-        elif query.endswith('s'):
-            return self.open_by_asset_type(query)
-        else:
-            return []
-
+    # v1 open <asset-type>s
     def open_by_asset_type(self, asset_type):
+        if not asset_type.endswith('s'):
+            return []
         url = self.get_url()
         asset_type = self.upper_first(asset_type)[:-1]
         assets = self.make_query(asset_type)["Assets"]
@@ -178,6 +181,7 @@ class V1(object):
             results.append(info)
         return results
 
+    # v1 open <oid>
     def open_by_oid_token(self, oid):
         url = self.get_url()
         asset_type, asset_number = oid.split(':')

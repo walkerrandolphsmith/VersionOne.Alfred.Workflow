@@ -30,6 +30,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>54DB08EA-8DF8-417C-9F0D-B24F90ED0C5F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>65B07682-084C-434B-8CD6-A1C3A1D23590</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>692FCA22-0D7B-4484-B4F6-4FAE6D2B10DE</key>
 		<array>
 			<dict>
@@ -241,6 +252,23 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>F4F05D89-7088-4AC5-AACD-28136B2016B3</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
@@ -270,23 +298,6 @@
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>DFDD5E0B-2F5E-4FD2-B926-BA8BFECAAAB5</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>plusspaces</key>
-				<false/>
-				<key>url</key>
-				<string>{query}</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>F4F05D89-7088-4AC5-AACD-28136B2016B3</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -502,6 +513,58 @@
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>plusspaces</key>
+				<false/>
+				<key>url</key>
+				<string>{query}</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>65B07682-084C-434B-8CD6-A1C3A1D23590</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>v1 open id</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Loading...</string>
+				<key>script</key>
+				<string>python src/main.py open_by_id "{query}"</string>
+				<key>title</key>
+				<string>Open a VersionOne asset by id</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>54DB08EA-8DF8-417C-9F0D-B24F90ED0C5F</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -537,6 +600,11 @@
 			<key>ypos</key>
 			<real>570</real>
 		</dict>
+		<key>54DB08EA-8DF8-417C-9F0D-B24F90ED0C5F</key>
+		<dict>
+			<key>ypos</key>
+			<real>1020</real>
+		</dict>
 		<key>5B76BFD6-8331-4CCF-9D48-D11F6F398D48</key>
 		<dict>
 			<key>ypos</key>
@@ -546,6 +614,11 @@
 		<dict>
 			<key>ypos</key>
 			<real>570</real>
+		</dict>
+		<key>65B07682-084C-434B-8CD6-A1C3A1D23590</key>
+		<dict>
+			<key>ypos</key>
+			<real>1020</real>
 		</dict>
 		<key>692FCA22-0D7B-4484-B4F6-4FAE6D2B10DE</key>
 		<dict>

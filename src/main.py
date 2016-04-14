@@ -15,7 +15,7 @@ def main(wf):
         'view_token': v1.view_token,
         'open_menu_pages': v1.open_menu_pages,
         'open_lobby': v1.open_lobby,
-        'open_page': v1.open,
+        'open_page': v1.open_page,
         'open_teamroom': v1.open_teamroom,
         'open': v1.open
     }

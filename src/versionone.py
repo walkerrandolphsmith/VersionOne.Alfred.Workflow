@@ -198,23 +198,24 @@ class V1(object):
             }
         ]
 
-    '''
-    def get_by_name(url, api_key, query):
-        asset_type = upper_first(query.split(' ', 1)[0])
-        name = query.split(' ', 1)[1]
+    # v1 open <asset-type> <name>
+    def open_by_name(self, query):
+        asset_type, name = query.split(' ', 1)
+        asset_type = self.upper_first(asset_type)
         params = dict(where="Name='" + name + "'")
-        query_url = url + 'rest-1.v1/Data/' + asset_type
-        assets = make_query(query_url, api_key, params)["Assets"]
+        assets = self.make_query(asset_type, params)["Assets"]
+        results = []
         for asset in assets:
             oid = asset['id']
-            name = asset['Attributes']['Name']['value']
-            arg_to_pass_on_enter_click = url + asset_type + '.mvc/Summary?oidToken=' + oid
-            wf.add_item(title=name, subtitle=oid, arg=arg_to_pass_on_enter_click, valid=True, icon=ICON_WEB)
-        wf.send_feedback()
-        return 0
-    '''
-
-
+            info = {
+                "title": asset['Attributes']['Name']['value'],
+                "subtitle": oid,
+                "arg": self.get_url() + asset_type + '.mvc/Summary?oidToken=' + oid,
+                "valid": True,
+                "icon": ICON_WEB
+            }
+            results.append(info)
+        return results
 
     '''
     def set(query, url, api_key):

@@ -628,6 +628,41 @@
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>v1 set id</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Loading...</string>
+				<key>script</key>
+				<string>python src/main.py set_attribute_value_to_id "{query}"</string>
+				<key>title</key>
+				<string>Set an attribute value of an asset in VersionOne</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>D51C3584-3639-497B-8D20-3F612DD7883D</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -712,6 +747,11 @@
 		<dict>
 			<key>ypos</key>
 			<real>110</real>
+		</dict>
+		<key>D51C3584-3639-497B-8D20-3F612DD7883D</key>
+		<dict>
+			<key>ypos</key>
+			<real>1320</real>
 		</dict>
 		<key>D87DACF0-846F-4137-A5E2-D5809230A041</key>
 		<dict>

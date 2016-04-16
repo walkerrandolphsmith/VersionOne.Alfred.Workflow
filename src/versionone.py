@@ -217,27 +217,31 @@ class V1(object):
             results.append(info)
         return results
 
-    '''
-    def set(query, url, api_key):
-        parts = query.split(' ', 3)
+    # v1 set <oid> <attribute-name>
+    def set_attribute_value_to_id(self, query):
+        oid, attribute = query.split(' ', 1)
+        attribute = self.upper_first(attribute)
 
-        oid, attribute = parts
         asset_type, asset_number = oid.split(':')
-        # get all the attribute values
+        asset_type = self.upper_first(asset_type)
 
-        query_url = url + 'rest-1.v1/Data/' + upper_first(asset_type) + upper_first(attribute)
-        assets = make_query(query_url, api_key)['Assets']
+        query_url = asset_type + attribute
+
+        assets = self.make_query(query_url)['Assets']
+        results = []
         for asset in assets:
             asset_oid = asset['id']
             asset_name = asset['Attributes']['Name']['value']
-            title = asset_name
-            subtitle = 'Set ' + oid + ', ' \
-                + upper_first(asset_type) + upper_first(attribute) \
-                + ' to ' + asset_oid + ' ' + asset_name
-            link = oid + " " + asset_oid
-            wf.add_item(title, subtitle, arg=link, valid=True, icon=ICON_WEB)
-        wf.send_feedback()
-    '''
+
+            info = {
+                "title": asset_name,
+                "subtitle": 'Set ' + oid + ', ' + asset_type + attribute + " to " + asset_oid + asset_name,
+                "arg": oid + " " + asset_oid,
+                "valid": True,
+                "icon": ICON_WEB
+            }
+            results.append(info)
+        return results
 
 
     '''

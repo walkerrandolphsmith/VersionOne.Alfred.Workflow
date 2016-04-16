@@ -19,7 +19,8 @@ def main(wf):
         'open_teamroom': v1.open_teamroom,
         'open_type': v1.open_by_asset_type,
         'open_by_id': v1.open_by_oid_token,
-        'open_by_name': v1.open_by_name
+        'open_by_name': v1.open_by_name,
+        'set_attribute_value_to_id': v1.set_attribute_value_to_id
     }
 
     results = options[command](query)

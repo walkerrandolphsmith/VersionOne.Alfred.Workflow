@@ -26,8 +26,6 @@ class V1(object):
     def make_query(self, url, params=dict(sel="Name")):
         base_url = self.get_url()
         token = self.get_token()
-        if not token.startswith('Bearer '):
-            token = 'Bearer ' + token
 
         rest_url = '%srest-1.v1/Data/%s' % (base_url, url)
         headers = dict(Authorization=token, Accept="application/json")
@@ -84,6 +82,8 @@ class V1(object):
     def get_token(self):
         try:
             token = self._workflow.get_password('api_key')
+            if not token.startswith('Bearer '):
+                token = 'Bearer %s' % token
         except PasswordNotFound:
             self._workflow.add_item("No VersionOne token set, please set using command: 'v1 set token'")
             self._workflow.send_feedback()

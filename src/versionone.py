@@ -130,9 +130,9 @@ class V1(object):
     # v1 open page <name>
     def open_page(self, query):
         url = self.get_url()
-        page = self._workflow.settings['pages'][query]
-        if page:
-            link, title, subtitle, icon = page
+
+        if query in self._workflow.settings['pages']:
+            link, title, subtitle, icon = self._workflow.settings['pages'][query]
             return [
                 {
                     "title": title,
@@ -144,7 +144,13 @@ class V1(object):
                 }
             ]
         else:
-            return []
+            return [{
+                "title": "Open %s in the browser" % query,
+                "subtitle": "View %s" % query,
+                "arg": '%sDefault.aspx?menu=%s&feat-nav=m1' % (url, query),
+                "valid": True,
+                "icon": ICON_WEB
+            }]
 
     # v1 open teamroom <name>
     def open_teamroom(self, name):
